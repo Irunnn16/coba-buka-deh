@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>4U</title>
+    <style>
+        body {
+             text-align: center;
+             font-family: Arial, Helvetica, sans-serif;
+             background: #ffcccc;
+             background-image: url('flower.jpg');
+             background-size: cover;
+             background-position: center;
+             overflow: hidden;
+             position: relative;
+             
+        }
+        .love-message {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        #yesBtn {
+            background-color:#ffcccc;
+            color: white;
+        }
+        #noBtn {
+            background-color: brown;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="love-message">
+        <p> 
+            mau gak jadi pacarku??
+        </p>
+    </div>
+    <button class="btn" id="yesBtn">iya, aku amau</button>
+    <button class="btn" id="noBtn">maaf ya</button>
+
+    <script>
+        const loveMessage = document.querySelector('.love-message');
+        const yesButton = document.getElementById('yesBtn');
+        const noButton = document.getElementById('noBtn');
+        
+        yesButton.addEventListener('click', function () {
+            loveMessage.innerHTML = "<p> MAKASIH SAYANG <3 </p>";
+                yesButton.style.display ='none';
+                noButton.style.display = 'none';
+        });
+
+        noButton.addEventListener('click', function() {
+            loveMessage.innerHTML = "<p>coba dulu sp tau cocok</p>";
+            loveMessage.style.color = 'black';
+            loveMessage.style.fontSize = '20px';
+            yesButton.style.position = 'absolute';
+            yesButton.style.left = Math.random() * 80 + "vw";
+            yesButton.style.top = Math.random() * 80 + "vh";
+        });
+    </script>
+</body>
+</html>
